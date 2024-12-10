@@ -16,7 +16,7 @@
 
 .container {
   --max-width: 375px;
-  width: min(var(--max-width), 100% - var(--px-lg));
+  width: min(var(--max-width), 100% - var(--px-lg) * 2);
   margin-inline: auto;
 }
 
@@ -24,13 +24,17 @@
   display: none;
 }
 
-.even-coluns {
+.even-columns {
   display: grid;
   gap: 1rem;
 }
 
 .flex {
   display: flex;
+}
+
+.items-center {
+  align-items: center;
 }
 
 .grid {
@@ -41,17 +45,21 @@
   gap: 1rem;
 }
 
+.gap-1\.5 {
+  gap: 1.5rem;
+}
+
 @media (width >= 80em) {
   .container {
-    --max-width: 80em;
+      --max-width: 80rem;
   }
 
-  .disktop-only {
-    display: initial;
+  .desktop-only {
+      display: initial;
   }
 
-  .even-coluns {
-    grid-auto-flow: column;
-    grid-auto-columns: 1fr;
+  .even-columns {
+      grid-auto-flow: column;
+      grid-auto-columns: 1fr;
   }
 }
